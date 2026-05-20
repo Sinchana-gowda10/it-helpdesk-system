@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title" style="color: #cb106f;font-size: 35px">
+    Hello {{name}}! 👋<br>
+</h1>
+
+
+<p style="font-size: 25px;color: #860b4a">
+    Here is your information:<br>
+</p>
+<div class="box">
+    <h2 class="subtitle" style="color: darkblue;font-weight: bold">User Details:</h2>
+    <p><strong>ID:</strong> {{id}}</p>
+    <p><strong>Name:</strong> {{name}}</p>
+    <p><strong>Phone:</strong> {{ phone }}</p>
+    <p><strong>Address:</strong> {{ address }}</p>
+    <p><strong>Registration Date:</strong> {{creation_date}}</p>
+</div>
+{% endblock %}

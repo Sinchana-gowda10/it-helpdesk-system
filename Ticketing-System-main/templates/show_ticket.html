@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <p class="subtitle" style="color: #cb106f;font-size: 35px;font-family: 'Comic Sans MS',serif;font-weight: bold">
+        {{message}}</p>
+    {% if message == "" %}
+    <p class="subtitle"
+       style="color: rgba(1,152,1,0.91);font-size: 35px;font-family: 'Comic Sans MS',serif;font-weight: bold">
+        The ticket has been added successfully. Here is the new ticket information:</p>
+    {% endif %}
+    <div class="box">
+        <h2 class="subtitle" style="color: darkblue;font-weight: bold">Ticket Details:</h2>
+        <p><strong>Ticket ID:</strong> {{ ticket.id }}</p>
+        <p><strong>Description:</strong> {{ ticket.description }}</p>
+        <p><strong>Type:</strong> {{ ticket.type }}</p>
+        <p><strong>Is Active:</strong> {{ ticket.is_active }}</p>
+        <p><strong>Client ID:</strong> {{ ticket.client_id }}</p>
+        <p><strong>Creation Date:</strong> {{ ticket.creation_date }}</p>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <a href="{{ url_for('main.index') }}" class="button is-link">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
